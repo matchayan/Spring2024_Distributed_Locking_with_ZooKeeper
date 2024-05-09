@@ -175,7 +175,7 @@ The script includes basic error handling to catch and log exceptions related to 
 
 This script is a basic demonstration of using ZooKeeper for distributed locking in Python. It can be extended and integrated into larger applications requiring coordinated access control across distributed components.
 
-## 6. Conclusion
+## 4. Conclusion
 The "ZooKeeper Distributed Locking" project exemplifies a sophisticated integration of 
 distributed locking mechanisms using ZooKeeper, Python scripting, and Docker containerization. 
 The initiative focuses on establishing robust, distributed locking within a networked environment 
