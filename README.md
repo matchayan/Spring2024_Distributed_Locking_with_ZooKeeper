@@ -6,7 +6,7 @@
 - GitHub account: matchayan
 - UMD email: yanliu33@umd.edu
 - Personal email: yanliu33@umd.edu
-
+- link to the video：https://www.youtube.com/watch?v=X6r2qX1FVXw
 ## Description
 
 This project demonstrates a distributed lock mechanism using ZooKeeper, Docker, and Python. 
