@@ -49,8 +49,8 @@ Project Setup:
     main files include:
     - `py_Dlock.ipynb`: A Jupyter Notebook that contains code for implementing a distributed locking mechanism using Apache ZooKeeper and the Kazoo library.
     - `dl_sci.py`: A Python script based on the above code, which can be run from the terminal to simulate different terminal instances acquiring the ZooKeeper service.
-    - `Dockerfile-python`:  Creates a Docker container that provides a Jupyter Notebook environment to run the 'py_Dlock.ipynb' notebook.
-    - `Dockerfile-jupyter`: Creates a Docker container that runs a Python script using the Kazoo library to implement a distributed locking mechanism.
+    - `Dockerfile-python`:  Creates a Docker container that runs a Python script using the Kazoo library to implement a distributed locking mechanism.
+    - `Dockerfile-jupyter`: Creates a Docker container that provides a Jupyter Notebook environment to run the 'py_Dlock.ipynb' notebook.
     - `docker-compose.yml`: This file is used to configure and deploy a multi-container Docker application, involving a ZooKeeper cluster and related services for distributed coordination.
     - `kazoo-2.10.0-py2.py3-none-any.whl`: This is a Kazoo library file, used to prevent network errors that may cause 'pip install' to fail.
 
@@ -113,9 +113,9 @@ Simulate distributed locks
   - The commands are:
 
    ```
-   docker-compose run --rm --name python-app-instance1 python-app
-   docker-compose run --rm --name python-app-instance2 python-app
-   docker-compose run --rm --name python-app-instance3 python-app
+   docker compose run --rm --name python-app-instance1 python-app
+   docker compose run --rm --name python-app-instance2 python-app
+   docker compose run --rm --name python-app-instance3 python-app
    ```
 
   - These commands will allow you to spin up multiple instances of the Docker service. 
