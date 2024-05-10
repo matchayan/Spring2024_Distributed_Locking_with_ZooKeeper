@@ -14,7 +14,7 @@ It utilizes the Kazoo library to interact with ZooKeeper for managing locks acro
 This example is particularly useful in scenarios where distributed applications need to ensure that 
 only one instance is executing a particular action at a time.
 
-## Technologies
+## 1. Technologies
 
 ### ZooKeeper: A Centralized Service for Distributed Systems
 
@@ -57,7 +57,7 @@ only one instance is executing a particular action at a time.
  - By using Docker, the project achieves portability and encapsulation, allowing
   developers to run the application in any environment with minimal setup.
 
-## Docker implementation
+## 2. Docker implementation
 
 The Docker system designed for this project follows a logical sequence to
   ensure a smooth and consistent environment for both development and deployment
