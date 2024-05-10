@@ -38,6 +38,24 @@ only one instance is executing a particular action at a time.
       4. **Fast Configuration Updates**: Enables quick updates and synchronization of configuration across all nodes, ensuring that the entire system is operating on the most current settings.
 
 ### Docker: Containerization for Portability
+ - Docker is a containerization platform that simplifies the process of
+  developing, deploying, and running applications
+ - It allows developers to package an application and its dependencies into a
+  lightweight, portable container
+ - These containers can run consistently across different environments, ensuring
+  that the application behaves the same way in development, testing, and
+  production
+ - Docker provides a standardized way to encapsulate and distribute applications,
+  making it easier to manage dependencies, streamline deployment, and enhance
+  collaboration among development teams.
+
+ - The Dockerfile specifies the use of an official Python runtime as the base
+  image, installs the Redis server, and copies the Python script and mock
+  database file into the container. The resulting Docker image encapsulates the
+  entire project, making it easily deployable and scalable.
+
+ - By using Docker, the project achieves portability and encapsulation, allowing
+  developers to run the application in any environment with minimal setup.
 
 ## Docker implementation
 
@@ -175,7 +193,32 @@ The script includes basic error handling to catch and log exceptions related to 
 
 This script is a basic demonstration of using ZooKeeper for distributed locking in Python. It can be extended and integrated into larger applications requiring coordinated access control across distributed components.
 
-## 4. Conclusion
+## 4. Project Diagram
+
+```mermaid
+
+sequenceDiagram
+    participant Client
+    participant LockService
+
+    Client->>LockService: Request Lock
+    alt Lock Acquired
+        LockService->>Client: Lock Granted
+        Client->>Client: Perform Task
+        Client->>LockService: Unlock Request
+        LockService->>Client: Lock Released
+    else Lock Not Acquired
+        LockService->>Client: Lock Denied
+        Client->>LockService: Retry Lock Request
+        LockService->>Client: Lock Granted
+        Client->>Client: Perform Task
+        Client->>LockService: Unlock Request
+        LockService->>Client: Lock Released
+    end
+
+```
+
+## 5. Conclusion
 The "ZooKeeper Distributed Locking" project exemplifies a sophisticated integration of 
 distributed locking mechanisms using ZooKeeper, Python scripting, and Docker containerization. 
 The initiative focuses on establishing robust, distributed locking within a networked environment 
